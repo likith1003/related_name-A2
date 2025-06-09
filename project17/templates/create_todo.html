@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+  create_todo
+{% endblock title %}
+
+{% block content %}
+    <center>
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+        <h1>Welcome to create_todo Page</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ETFO.as_p}}
+            <input type="submit" value="Create">
+        </form>
+    </center>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <center>
+    <h1>Welcome to {{user.username}} list Page</h1>
+    <table>
+        <tr>
+            <th>SLNO</th>
+            <th>Title</th>
+            <th>Decsription</th>
+            <th>Action</th>
+        </tr>
+        {% for todo in user.todos.all %}
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{todo.title}}</td>
+            <td>{{todo.desc}}</td>
+            <td>{{todo.user.username}}</td>
+          </tr>
+        {% endfor %}
+    </table>
+  </center>
+{% endblock content %}
